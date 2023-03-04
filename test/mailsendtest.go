@@ -1,3 +1,13 @@
+/*
+https://articles.wesionary.team/sending-emails-with-go-golang-using-smtp-gmail-and-oauth2-185ee12ab306
+
+https://zetcode.com/golang/email-smtp/
+
+https://dzone.com/articles/go-language-library-for-reading-and-writing-micros
+
+https://www.youtube.com/watch?v=H0HZc4FgX7E
+*/
+
 package main
 
 import (
