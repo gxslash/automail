@@ -13,8 +13,8 @@ func main() {
 	receiversFilePath := "participants.xlsx"
 	templatePath := "./content.html"
 
-	user := "qsbitu22@gmail.com"
-	password := "ihcduscobatgsyzn"
+	user := "mymail@gmail.com"
+	password := "gofindthis"
 
 	userCred := automail.UserCred{
 		User: user,
