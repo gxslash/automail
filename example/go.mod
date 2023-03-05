@@ -1,8 +1,8 @@
-module gxslash
+module gxslash.com/example
 
 go 1.20
 
-require gopkg.in/gomail.v2 v2.0.0-20160411212932-81ebce5c23df
+require gxslash.com/automail v0.0.0-00010101000000-000000000000
 
 require (
 	github.com/mohae/deepcopy v0.0.0-20170929034955-c48cc78d4826 // indirect
@@ -12,8 +12,8 @@ require (
 	github.com/xuri/excelize/v2 v2.7.0 // indirect
 	github.com/xuri/nfp v0.0.0-20220409054826-5e722a1d9e22 // indirect
 	golang.org/x/crypto v0.5.0 // indirect
-	golang.org/x/net v0.5.0 // indirect
-	golang.org/x/text v0.6.0 // indirect
-	gopkg.in/alexcesaro/quotedprintable.v3 v3.0.0-20150716171945-2caba252f4dc // indirect
-	gopkg.in/mail.v2 v2.3.1 // indirect
+	golang.org/x/net v0.8.0 // indirect
+	golang.org/x/text v0.8.0 // indirect
 )
+
+replace gxslash.com/automail => ../automail

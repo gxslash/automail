@@ -15,7 +15,10 @@ import (
 
 func main() {
 
-	receivers := getReceivers("participants.xlsx")
+	automail.sendGoMail
+	nameIndex := 1
+	emailIndex := 3
+	receivers := getReceivers("participants.xlsx", nameIndex, emailIndex)
 	for index, receiver := range receivers {
 		if index > 80 {
 			fmt.Println(fmt.Sprintf("Sending to %s with email %s", receiver.Name, receiver.Email))
@@ -54,11 +57,11 @@ func readExcelCols(filePath string) [][]string {
 	return col
 }
 
-func getReceivers(filePath string) []Receiver {
+func getReceivers(filePath string, nameColIndex int, emailColIndex int) []Receiver {
 
 	col := readExcelCols(filePath)
 
-	receivers := make([]Receiver, len(col[1]), len(col[1]))
+	receivers := make([]Receiver, len(col[nameColIndex]), len(col[emailColIndex]))
 	for index, name := range col[1] {
 		if index == 0 {
 			continue
