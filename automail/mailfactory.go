@@ -57,7 +57,6 @@ func SendGMail(receiver Receiver, user UserCred, attachmentFilePath string, cont
 	addr := "smtp.gmail.com:587"
 	host := "smtp.gmail.com"
 	auth := smtp.PlainAuth("", user.User, user.Pass, host)
-
 	if err := smtp.SendMail(addr, auth, request.Sender, request.To, data); err != nil {
 		return fmt.Errorf("failed to send email to %s: %w", receiver.Name, err)
 	}
@@ -107,7 +106,7 @@ func writeAttachment(buf *bytes.Buffer, filePath string) {
 	base64.StdEncoding.Encode(b, data)
 	fileName := strings.Split(filePath, "/")[2]
 	buf.WriteString(fmt.Sprintf("\r\n--%s\r\n", "my-boundary-779"))
-	buf.WriteString("Content-Type: text/plain; charset=\"utf-8\"\r\n")
+	buf.WriteString("Content-Type: application/pdf; charset=\"utf-8\"\r\n")
 	buf.WriteString("Content-Transfer-Encoding: base64\r\n")
 	buf.WriteString(fmt.Sprintf("Content-Disposition: attachment; filename=%s\r\n", fileName))
 	buf.WriteString("Content-ID: <words.txt>\r\n\r\n")
